@@ -4,6 +4,7 @@ import os
 
 def main():
     insta_bot = InstagramBot()
+    insta_bot.login()
 
     handle = os.environ["USERNAME"]
 
