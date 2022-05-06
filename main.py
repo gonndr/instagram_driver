@@ -1,5 +1,6 @@
 from instagram_bot import InstagramBot
 
+
 def main():
     insta_bot = InstagramBot()
 
