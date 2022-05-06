@@ -12,14 +12,11 @@ def main():
 
     following = insta_bot.find_following(handle)
 
-    print("Followers: ", len(followers))
-    print("Following: ", len(following))
-
     # common_people = list(set(following).intersection(followers))
 
     people_not_following_back = list(set(following)-set(followers))
 
-    print(people_not_following_back)
+    print(f"You have {0} people not following back", len(following))
 
     with open("people_not_following_back.txt", "w") as file:
         for person in people_not_following_back:
