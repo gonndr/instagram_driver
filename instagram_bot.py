@@ -7,9 +7,8 @@ import os
 
 class InstagramBot:
     def __init__(self):
-        chromedriver_path = "/Users/goncalogomes/Code/Tools/chromedriver"
+        chromedriver_path = os.environ["DRIVE_PATH"]
         self.driver = webdriver.Chrome(executable_path=chromedriver_path)
-        self.follower_list = None
 
     def login(self):
 
