@@ -16,7 +16,7 @@ def main():
 
     people_not_following_back = list(set(following)-set(followers))
 
-    print(f"You have {0} people not following back", len(following))
+    print(f"You have {0} people not following back", len(people_not_following_back))
 
     with open("people_not_following_back.txt", "w") as file:
         for person in people_not_following_back:
