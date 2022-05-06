@@ -1,10 +1,11 @@
 from instagram_bot import InstagramBot
+import os
 
 
 def main():
     insta_bot = InstagramBot()
 
-    handle = insta_bot.login()
+    handle = os.environ["USERNAME"]
 
     followers = insta_bot.find_followers(handle)
 

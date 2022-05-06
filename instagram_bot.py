@@ -19,8 +19,6 @@ class InstagramBot:
         self.attempt(lambda: self.driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(Keys.ENTER))
         self.attempt(lambda: self.driver.find_element_by_xpath('/html/body/div[1]/section/main/div/div/div/div/button').click()) # dont save info
         self.attempt(lambda: self.driver.find_element_by_xpath('/html/body/div[5]/div/div/div/div[3]/button[2]').click()) # turn off notifications
-        return self.attempt(lambda: self.driver.find_element_by_xpath('/html/body/div[1]/section/main/section/div[3]/div[1]/div/div/div[2]/div[1]/div/div/a').text)
-
 
     def find_followers(self, page):
         self.attempt(lambda: self.driver.get(f"https://www.instagram.com/{page}"))
