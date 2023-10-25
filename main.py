@@ -1,4 +1,4 @@
-from instagram_bot import InstagramDriver
+from instagram_driver import InstagramDriver
 import time
 
 
