@@ -4,8 +4,10 @@ Wondering who are you following who doesn't follow you back? This app figures it
 ##
 Environment variables:
 
-USERNAME - your instagram handle
+EMAIL - your instagram mail
+
+USERNAME - your instagram username
 
 PASSWORD - your instagram password
 
-DRIVE_PATH - path to the chromedriver (chromedriver needs to support the same version of google chrome)
+DRIVER_PATH - path to the chromedriver (chromedriver needs to support the same version of google chrome)
