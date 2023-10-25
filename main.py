@@ -1,26 +1,26 @@
-from instagram_bot import InstagramBot
-import os
+from instagram_bot import InstagramDriver
+import time
 
 
 def main():
-    insta_bot = InstagramBot()
-    insta_bot.login()
+    insta_bot = InstagramDriver()
+    try:
+        insta_bot.login()  # not needed if already logged in
+    finally:
+        insta_bot.navigate_to_profile()
+    followers_list = insta_bot.get_list_of('followers')
+    following_list = insta_bot.get_list_of('following')
 
-    handle = os.environ["USERNAME"]
+    not_following_back_list = list(set(following_list)-set(followers_list))
+    not_following_back_list_count = len(not_following_back_list)
 
-    followers = insta_bot.find_followers(handle)
+    print(f"You have {not_following_back_list_count} people not following back")
 
-    following = insta_bot.find_following(handle)
-
-    # common_people = list(set(following).intersection(followers))
-
-    people_not_following_back = list(set(following)-set(followers))
-
-    print(f"You have {0} people not following back", len(people_not_following_back))
-
-    with open("people_not_following_back.txt", "w") as file:
-        for person in people_not_following_back:
+    with open("users_not_following_back.txt", "w") as file:
+        for person in not_following_back_list:
             file.write(person + "\n")
+
+    time.sleep(100)
 
 
 if __name__ == "__main__":
